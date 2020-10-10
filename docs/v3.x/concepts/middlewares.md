@@ -136,6 +136,7 @@ The core of Strapi embraces a small list of middlewares for performances, securi
 - p3p
 - parser
 - public
+- redirect
 - responses
 - responseTime
 - router
@@ -158,7 +159,13 @@ The following middlewares cannot be disabled: responses, router, logger and boom
   - `defaultIndex` (boolean): Display default index page at `/` and `/index.html`. Default value: `true`.
 
 ### Request middlewares
-
+- `redirect`
+  - `enabled` (boolean): Enable or disable redirect. Default value: `false`.
+  - `https`: (boolean): Redirect all non-https traffic to http. Default value: `false`.
+	-	`protocol`: (string): If not using https, a custom protocol can be specified. If undefined, request protocol will be used. Default value `undefined`
+	-	`port`: (integer): Specify a custom port for redirect. If undefined, request port will be used. Default value `undefined` 
+	-	`hostname`: (string): Specify a custom hostname for redirect. If undefined, request hostname will be used. Default value `undefined`
+	-	`statusCode`: (integer): Specify a custom redirect status code. Default value `301`
 - `session`
   - `enabled` (boolean): Enable or disable sessions. Default value: `false`.
 - `logger`
